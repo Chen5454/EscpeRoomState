@@ -9,13 +9,16 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
-        currentState = new CloseState();
+        currentState = new CloseState(myKey);
     }
 
     public void CLickMe(item i)
     {
-        currentState.DoState(i);
-            
+        if (currentState.DoState(i))
+        {
+            currentState = new OpenState();
+        }
+        
     }
 
 }

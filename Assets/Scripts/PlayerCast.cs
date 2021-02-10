@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum item {none , paperclip , drawer , key , door }
+public enum item {none , paperclip , key  }
+//public enum interactable {none , drawer , door } 
 
 public class PlayerCast : MonoBehaviour
 {
@@ -42,11 +43,14 @@ public class PlayerCast : MonoBehaviour
             }
         }
 
-
-
     }
 
+    public void SelectKey()
+    {
+        this.activeItem = item.key;
+        Debug.Log("CLicked");
 
+    }
 
     
 
