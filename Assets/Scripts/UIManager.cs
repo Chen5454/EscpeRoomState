@@ -57,8 +57,5 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void ButtonClicked()
-    {
-        Debug.Log("Clicked");
-    }
+
 }
