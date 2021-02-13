@@ -10,7 +10,7 @@ public class KeyItems : MonoBehaviour
     Interactable myLock;
     PlayerCast player;
     [SerializeField]
-   public Item me;
+    public Item theRightKey;
 
     public bool isPickedUp;
     public bool isOnce;
@@ -27,7 +27,7 @@ public class KeyItems : MonoBehaviour
 
     public void PickMeUp()
     {
-        player.inventory.Add(me);
+        player.inventory.Add(theRightKey);
         //myLock.currentState = new OpenState(me);
         gameObject.SetActive(false);
         isPickedUp = true;

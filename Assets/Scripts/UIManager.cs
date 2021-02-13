@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
                 buttonsArray[buttonCounter].gameObject.transform.position += new Vector3(spaceBetweenButtons, 0, 0);
                 spaceBetweenButtons += 80;
                 buttonsArray[buttonCounter].GetComponentInChildren<Image>().sprite = item.itemImage.sprite;
-                buttonsArray[buttonCounter].GetComponent<InventoryButtonActive>().items = item.me;
+                buttonsArray[buttonCounter].GetComponent<InventoryButtonActive>().items = item.theRightKey;
                 item.isOnce = false;
             }
             buttonCounter++;
