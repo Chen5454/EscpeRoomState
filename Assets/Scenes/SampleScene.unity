@@ -131,8 +131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 68836940}
   - component: {fileID: 68836943}
-  - component: {fileID: 68836942}
   - component: {fileID: 68836941}
+  - component: {fileID: 68836942}
   m_Layer: 5
   m_Name: PaperClipButton
   m_TagString: Untagged
@@ -199,10 +199,21 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 68836942}
+  m_TargetGraphic: {fileID: 127168710}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 68836942}
+        m_MethodName: onInventoryClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &68836942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,26 +223,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 68836939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: afd0c5d6702473a4cbc4667f528f51ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  playerRef: {fileID: 240734237}
+  items: 0
 --- !u!222 &68836943
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -296,7 +292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1097f38f07ab7da49a5a7de0dd6bf9ad, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -515,7 +511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a859bf24495909e45aca8ec0a4c05af1, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -717,14 +713,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRef: {fileID: 240734237}
-  buttons:
-  - {fileID: 858909275}
+  buttonsArray:
   - {fileID: 68836941}
-  - {fileID: 634838608}
-  - {fileID: 1874525051}
-  keyRef: {fileID: 1959405840}
-  paperClipRef: {fileID: 1174200315}
-  activeButton: 0
+  - {fileID: 858909275}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &634838606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,8 +1053,8 @@ GameObject:
   m_Component:
   - component: {fileID: 858909274}
   - component: {fileID: 858909277}
-  - component: {fileID: 858909276}
   - component: {fileID: 858909275}
+  - component: {fileID: 858909276}
   m_Layer: 5
   m_Name: ButtonKey
   m_TagString: Untagged
@@ -1128,12 +1121,12 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 858909276}
+  m_TargetGraphic: {fileID: 311686232}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 240734237}
-        m_MethodName: SelectKey
+      - m_Target: {fileID: 858909276}
+        m_MethodName: onInventoryClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1152,26 +1145,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 858909273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: afd0c5d6702473a4cbc4667f528f51ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  playerRef: {fileID: 240734237}
+  items: 0
 --- !u!222 &858909277
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1384,6 +1362,7 @@ MonoBehaviour:
   me: 1
   isPickedUp: 0
   isOnce: 0
+  itemImage: {fileID: 1250658393}
 --- !u!1 &1250658391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,3 +1861,4 @@ MonoBehaviour:
   me: 2
   isPickedUp: 0
   isOnce: 0
+  itemImage: {fileID: 499382138}

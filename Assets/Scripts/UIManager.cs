@@ -7,53 +7,54 @@ public class UIManager : MonoBehaviour
 {
     public PlayerCast playerRef;
 
-    public Button[] buttons = new Button[4];
+    public Button[] buttonsArray = new Button[4];
 
-    public KeyItems keyRef;
-    public KeyItems paperClipRef;
+    private int buttonCounter=0;
 
-    public int activeButton=0;
 
-    
+    private int spaceBetweenButtons = 0;
+
+    public static UIManager instance;
+
     private void Start()
     {
         playerRef = GetComponent<PlayerCast>();
 
+        instance = this;
     }
 
 
-    private void Update()
+    public void ActivateButtons(KeyItems item)
     {
-        ActivateButtons();
 
-    }
-    
-    void ActivateButtons()
-    {
-        if (keyRef.isPickedUp)
+        if (item.isPickedUp)
         {
             
-            buttons[0].gameObject.SetActive(true);
-            if (keyRef.isOnce)
+            buttonsArray[buttonCounter].gameObject.SetActive(true);
+
+            if (item.isOnce)
             {
-                buttons[0].gameObject.transform.position += new Vector3(activeButton, 0, 0);
-                activeButton += 80;
-                keyRef.isOnce = false;
+                buttonsArray[buttonCounter].gameObject.transform.position += new Vector3(spaceBetweenButtons, 0, 0);
+                spaceBetweenButtons += 80;
+                buttonsArray[buttonCounter].GetComponentInChildren<Image>().sprite = item.itemImage.sprite;
+                buttonsArray[buttonCounter].GetComponent<InventoryButtonActive>().items = item.me;
+                item.isOnce = false;
             }
+            buttonCounter++;
         }
 
-        if (paperClipRef.isPickedUp )
-        {
+        //if (paperClipRef.isPickedUp )
+        //{
 
-            buttons[1].gameObject.SetActive(true);
-            if (paperClipRef.isOnce)
-            {
-                buttons[1].gameObject.transform.position += new Vector3(activeButton, 0, 0);
-                activeButton += 80;
+        //    buttons[1].gameObject.SetActive(true);
+        //    if (paperClipRef.isOnce)
+        //    {
+        //        buttons[1].gameObject.transform.position += new Vector3(activeButton, 0, 0);
+        //        activeButton += 80;
 
-                paperClipRef.isOnce = false;
-            }
-        }
+        //        paperClipRef.isOnce = false;
+        //    }
+        //}
 
     }
 

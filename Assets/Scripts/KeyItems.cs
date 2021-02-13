@@ -10,15 +10,18 @@ public class KeyItems : MonoBehaviour
     Interactable myLock;
     PlayerCast player;
     [SerializeField]
-    item me;
+   public Item me;
 
     public bool isPickedUp;
     public bool isOnce;
+    public SpriteRenderer itemImage;
+
     private void Start()
     {
-      isOnce=true;
+        isOnce = true;
 
-    player = GameObject.FindObjectOfType<PlayerCast>(); 
+        player = GameObject.FindObjectOfType<PlayerCast>();
+
 
     }
 
@@ -28,7 +31,9 @@ public class KeyItems : MonoBehaviour
         //myLock.currentState = new OpenState(me);
         gameObject.SetActive(false);
         isPickedUp = true;
-    }
-        
+        UIManager.instance.ActivateButtons(this);
 
+    }
+
+   
 }

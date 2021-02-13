@@ -5,14 +5,14 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public BaseState currentState;
-    public item myKey;
+    public Item myKey;
 
     private void Start()
     {
         currentState = new CloseState(myKey);
     }
 
-    public void CLickMe(item i)
+    public void CLickMe(Item i)
     {
         if (currentState.DoState(i))
         {

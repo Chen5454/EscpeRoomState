@@ -1,22 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum item {none , paperclip , key  }
-//public enum interactable {none , drawer , door } 
+public enum Item {none , paperclip , key  }
 
 public class PlayerCast : MonoBehaviour
 {
     public Camera cam;
-    public List<item> inventory;
-    public item activeItem;
+    public List<Item> inventory;
+    public Item activeItem;
 
     private void Start()
     {
-        inventory = new List<item>();
-        
+        inventory = new List<Item>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
@@ -39,20 +36,19 @@ public class PlayerCast : MonoBehaviour
                     hitItem.PickMeUp();
                 }
 
-
             }
         }
 
     }
 
-    public void SelectKey()
+    public void ButtonSelect()  //this is the generic button im trying to do
     {
-        this.activeItem = item.key;
-        Debug.Log("CLicked");
+        this.activeItem = Item.key;
+        Debug.Log("Clicked");
 
     }
 
-    
+
 
 
 }
