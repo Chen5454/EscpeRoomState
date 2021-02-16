@@ -8,10 +8,17 @@ public class PlayerCast : MonoBehaviour
     public Camera cam;
     public List<Item> inventory;
     public Item activeItem;
+    public static PlayerCast instance;
+
+    public GameObject CurrentRoom;
+    
+    
+
 
     private void Start()
     {
         inventory = new List<Item>();
+        instance = this;
     }
 
     void Update()
@@ -23,17 +30,30 @@ public class PlayerCast : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-
-                if (hit.collider.CompareTag("Interact"))
-                {
+                    if (hit.collider.CompareTag("Interact"))
+                    {
                     Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
-                    interactable.CLickMe(activeItem);
+
+                    if (interactable.currentState is OpenState && interactable.Transport)
+                    {
+                        SwitchRooms(interactable);
+                    }
+                    if (interactable.currentState is OpenState && interactable.containsKey)
+                    {
+                        
+                        interactable.key.PickMeUp();
+                        interactable.containsKey = false;
+                    }
+                    else
+                    {
+                        interactable.CLickMe(activeItem);
+                    }
                     
-                }
+                    }
                 else if(hit.collider.CompareTag("Key"))
                 {
                      KeyItems hitItem = hit.collider.gameObject.GetComponent<KeyItems>();
-                    hitItem.PickMeUp();
+                     hitItem.PickMeUp();
                 }
 
             }
@@ -48,7 +68,12 @@ public class PlayerCast : MonoBehaviour
 
     }
 
-
+    public void SwitchRooms(Interactable Door)
+    {
+        CurrentRoom.gameObject.SetActive(false);
+        Door.room2.SetActive(true);
+        CurrentRoom = Door.room2;
+    }
 
 
 }

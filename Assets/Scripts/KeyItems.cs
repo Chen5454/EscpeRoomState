@@ -27,7 +27,7 @@ public class KeyItems : MonoBehaviour
 
     public void PickMeUp()
     {
-        player.inventory.Add(theRightKey);
+        PlayerCast.instance.inventory.Add(theRightKey);
         //myLock.currentState = new OpenState(me);
         gameObject.SetActive(false);
         isPickedUp = true;
