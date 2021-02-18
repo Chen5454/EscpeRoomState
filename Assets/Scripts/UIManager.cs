@@ -34,9 +34,9 @@ public class UIManager : MonoBehaviour
 
             if (item.isOnce)
             {
-                spaceBetweenButtons += 80;
-                buttonsArray[buttonCounter].gameObject.transform.position += new Vector3(spaceBetweenButtons, 0, 0);
                 
+                buttonsArray[buttonCounter].gameObject.transform.position += new Vector3(spaceBetweenButtons, 0, 0);
+                spaceBetweenButtons += 80;
                 buttonsArray[buttonCounter].GetComponentInChildren<Image>().sprite = item.itemImage.sprite;
                 buttonsArray[buttonCounter].GetComponent<InventoryButtonActive>().items = item.theRightKey;
                 item.isOnce = false;

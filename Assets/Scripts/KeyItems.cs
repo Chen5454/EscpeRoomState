@@ -15,13 +15,21 @@ public class KeyItems : MonoBehaviour
     public bool isPickedUp;
     public bool isOnce;
     public SpriteRenderer itemImage;
+   
 
     private void Start()
     {
+
+        Init();
+        //player = GameObject.FindObjectOfType<PlayerCast>();
+
+
+    }
+
+
+    public void Init()
+    {
         isOnce = true;
-
-        player = GameObject.FindObjectOfType<PlayerCast>();
-
 
     }
 

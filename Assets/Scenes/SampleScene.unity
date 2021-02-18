@@ -441,6 +441,7 @@ MonoBehaviour:
   cam: {fileID: 963194227}
   inventory: 
   activeItem: 0
+  CurrentRoom: {fileID: 592856715}
 --- !u!4 &240734238
 Transform:
   m_ObjectHideFlags: 0
@@ -588,6 +589,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myKey: 2
+  Transport: 1
+  containsKey: 0
+  room2: {fileID: 1987643412}
+  key: {fileID: 0}
+  playerRef: {fileID: 0}
+  buttonsArray: {fileID: 0}
 --- !u!1 &499382136
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592856715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.88, y: 5.41, z: -12.23}
+  m_LocalPosition: {x: 28.9, y: 5.41, z: -12.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1959405838}
@@ -1129,7 +1136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000015258789, y: 45.69876}
+  m_AnchoredPosition: {x: 80, y: 45.69876}
   m_SizeDelta: {x: 590.84845, y: 91.39752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &806849171
@@ -1397,6 +1404,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myKey: 1
+  Transport: 0
+  containsKey: 1
+  room2: {fileID: 0}
+  key: {fileID: 1959405840}
+  playerRef: {fileID: 240734237}
+  buttonsArray: {fileID: 534246482}
 --- !u!1 &1174200312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,6 +1900,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myKey: 2
+  Transport: 0
+  containsKey: 0
+  room2: {fileID: 0}
+  key: {fileID: 0}
+  playerRef: {fileID: 0}
+  buttonsArray: {fileID: 0}
 --- !u!65 &1817428808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2279,7 +2298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1959405838
 Transform:
   m_ObjectHideFlags: 0
@@ -2371,6 +2390,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myKey: 1
+  Transport: 0
+  containsKey: 0
+  room2: {fileID: 0}
+  key: {fileID: 0}
+  playerRef: {fileID: 0}
+  buttonsArray: {fileID: 0}
 --- !u!65 &1979204340
 BoxCollider:
   m_ObjectHideFlags: 0

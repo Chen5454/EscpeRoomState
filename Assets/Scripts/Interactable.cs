@@ -10,10 +10,17 @@ public class Interactable : MonoBehaviour
     public bool containsKey;
     public GameObject room2;
     public KeyItems key;
+    public PlayerCast playerRef;
+    public UIManager buttonsArray;
     //public GameObject keyImage;
     private void Start()
     {
         currentState = new CloseState(myKey);
+
+        if (key != null)
+        {
+            key.Init();
+        }
     }
 
     public void CLickMe(Item i)
@@ -21,6 +28,10 @@ public class Interactable : MonoBehaviour
         if (currentState.DoState(i))
         {
             currentState = new OpenState();
+            buttonsArray.gameObject.
+           
+            
+            
         }
         
     }
