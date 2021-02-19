@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e3b313775d0aa4dada5be0280d4916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myKey: 2
+  myKey: Key
   Name: Door
   Transport: 1
   containsKey: 0
@@ -1473,12 +1473,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e3b313775d0aa4dada5be0280d4916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myKey: 1
+  myKey: Paperclip
   Name: Cabinet
   Transport: 0
   containsKey: 1
   room2: {fileID: 0}
-  key: {fileID: 1174200315}
+  key: {fileID: 1959405840}
 --- !u!1 &1174200312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74cd059e5ff91b043a269f97987675cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theRightKey: 1
+  theRightKey: Paperclip
   isPickedUp: 0
   isOnce: 0
   itemImage: {fileID: 1250658393}
@@ -2494,7 +2494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74cd059e5ff91b043a269f97987675cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theRightKey: 2
+  theRightKey: Key
   isPickedUp: 0
   isOnce: 0
   itemImage: {fileID: 499382138}

@@ -22,13 +22,13 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public void CLickMe(string i)
+    public void ClickMe(string i)
     {
         if (currentState.DoState(i))
         {
             currentState = new OpenState();
 
-            GameController.instance.showDialogue("Used " + key.Name + " to open " + Name);
+            GameController.instance.showDialogue("Used " + i + " to open " + Name);
 
         }
         else

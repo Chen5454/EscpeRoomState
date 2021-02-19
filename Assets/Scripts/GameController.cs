@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Item {none , paperclip , key  }
 
 public class GameController : MonoBehaviour
 {
@@ -48,7 +47,7 @@ public class GameController : MonoBehaviour
                     }
                     else
                     {
-                        interactable.CLickMe(activeItem);
+                        interactable.ClickMe(activeItem);
                     }
 
                 }
