@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class OpenState : BaseState
 {
-    public Interactable myLock;
-
     public bool DoState(string i)
     {
         return true;

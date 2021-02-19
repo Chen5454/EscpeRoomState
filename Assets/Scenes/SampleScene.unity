@@ -508,7 +508,7 @@ MonoBehaviour:
   inventory: []
   activeItem: 0
   CurrentRoom: {fileID: 592856715}
-  GameTextBox: {fileID: 0}
+  GameTextBox: {fileID: 1869431098}
 --- !u!4 &240734238
 Transform:
   m_ObjectHideFlags: 0
@@ -661,9 +661,7 @@ MonoBehaviour:
   Transport: 1
   containsKey: 0
   room2: {fileID: 1987643412}
-  key: {fileID: 0}
-  playerRef: {fileID: 0}
-  buttonsArray: {fileID: 0}
+  key: {fileID: 1959405840}
 --- !u!1 &499382136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,9 +1478,7 @@ MonoBehaviour:
   Transport: 0
   containsKey: 1
   room2: {fileID: 0}
-  key: {fileID: 1959405840}
-  playerRef: {fileID: 240734237}
-  buttonsArray: {fileID: 534246482}
+  key: {fileID: 1174200315}
 --- !u!1 &1174200312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,8 +1978,6 @@ MonoBehaviour:
   containsKey: 0
   room2: {fileID: 0}
   key: {fileID: 0}
-  playerRef: {fileID: 0}
-  buttonsArray: {fileID: 0}
 --- !u!65 &1817428808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2556,8 +2550,6 @@ MonoBehaviour:
   containsKey: 0
   room2: {fileID: 0}
   key: {fileID: 0}
-  playerRef: {fileID: 0}
-  buttonsArray: {fileID: 0}
 --- !u!65 &1979204340
 BoxCollider:
   m_ObjectHideFlags: 0
