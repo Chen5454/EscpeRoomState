@@ -1,23 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum Item {none , paperclip , key  }
 
-public class PlayerCast : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     public Camera cam;
-    public List<Item> inventory;
-    public Item activeItem;
-    public static PlayerCast instance;
+    public List<KeyItems> inventory;
+    public string activeItem;
+    public static GameController instance;
 
     public GameObject CurrentRoom;
-    
-    
+
+    public Text GameTextBox;
 
 
     private void Start()
     {
-        inventory = new List<Item>();
+        inventory = new List<KeyItems>();
         instance = this;
     }
 
@@ -30,8 +32,8 @@ public class PlayerCast : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                    if (hit.collider.CompareTag("Interact"))
-                    {
+                if (hit.collider.CompareTag("Interact"))
+                {
                     Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
 
                     if (interactable.currentState is OpenState && interactable.Transport)
@@ -40,7 +42,7 @@ public class PlayerCast : MonoBehaviour
                     }
                     if (interactable.currentState is OpenState && interactable.containsKey)
                     {
-                        
+
                         interactable.key.PickMeUp();
                         interactable.containsKey = false;
                     }
@@ -48,23 +50,16 @@ public class PlayerCast : MonoBehaviour
                     {
                         interactable.CLickMe(activeItem);
                     }
-                    
-                    }
-                else if(hit.collider.CompareTag("Key"))
+
+                }
+                else if (hit.collider.CompareTag("Key"))
                 {
-                     KeyItems hitItem = hit.collider.gameObject.GetComponent<KeyItems>();
-                     hitItem.PickMeUp();
+                    KeyItems hitItem = hit.collider.gameObject.GetComponent<KeyItems>();
+                    hitItem.PickMeUp();
                 }
 
             }
         }
-
-    }
-
-    public void ButtonSelect()  //this is the generic button im trying to do
-    {
-        this.activeItem = Item.key;
-        Debug.Log("Clicked");
 
     }
 
@@ -75,5 +70,8 @@ public class PlayerCast : MonoBehaviour
         CurrentRoom = Door.room2;
     }
 
-
+    public void showDialogue(string text)
+    {
+        GameTextBox.text = text;
+    }
 }

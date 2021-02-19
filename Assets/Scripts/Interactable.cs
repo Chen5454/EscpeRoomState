@@ -5,13 +5,12 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public BaseState currentState;
-    public Item myKey;
+    public string myKey;
+    public string Name;
     public bool Transport;
     public bool containsKey;
     public GameObject room2;
     public KeyItems key;
-    public PlayerCast playerRef;
-    public UIManager buttonsArray;
     //public GameObject keyImage;
     private void Start()
     {
@@ -23,17 +22,19 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public void CLickMe(Item i)
+    public void CLickMe(string i)
     {
         if (currentState.DoState(i))
         {
             currentState = new OpenState();
-            buttonsArray.gameObject.
-           
-            
-            
+
+            GameController.instance.showDialogue("Used " + key.Name + " to open " + Name);
+
         }
-        
+        else
+        {
+            GameController.instance.showDialogue(Name + " is locked");
+        }
     }
 
 }

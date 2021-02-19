@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InventoryButtonActive : MonoBehaviour
 {
-    public PlayerCast playerRef;
-    public Item items;
+    public GameController playerRef;
+    public string items;
     public void onInventoryClick()
     {
         playerRef.activeItem = items;

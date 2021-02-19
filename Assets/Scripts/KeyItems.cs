@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-
+using System;
 
 public class KeyItems : MonoBehaviour
 {
     [SerializeField]
-    Interactable myLock;
-    PlayerCast player;
-    [SerializeField]
-    public Item theRightKey;
+    public String theRightKey;
 
     public bool isPickedUp;
     public bool isOnce;
     public SpriteRenderer itemImage;
-   
+    public string Name;
 
     private void Start()
     {
@@ -35,12 +32,11 @@ public class KeyItems : MonoBehaviour
 
     public void PickMeUp()
     {
-        PlayerCast.instance.inventory.Add(theRightKey);
-        //myLock.currentState = new OpenState(me);
+        GameController.instance.inventory.Add(this);
         gameObject.SetActive(false);
         isPickedUp = true;
         UIManager.instance.ActivateButtons(this);
-
+        GameController.instance.showDialogue("picked up " + Name);
     }
 
    

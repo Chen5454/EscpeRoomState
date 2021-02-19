@@ -6,7 +6,7 @@ public class OpenState : BaseState
 {
     public Interactable myLock;
 
-    public bool DoState(Item i)
+    public bool DoState(string i)
     {
         return true;
     }

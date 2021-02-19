@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CloseState : BaseState
 {
-    public Item myKey;
-    public CloseState(Item i)
+    public string myKey;
+    public CloseState(string i)
     {
         myKey = i;
     }
-    public bool DoState(Item i)
+    public bool DoState(string i)
     {
-        Debug.Log("RightKey?" + (i == myKey).ToString());
+        Debug.Log("RightKey? " + (i == myKey));
         return i == myKey;
     }
    
