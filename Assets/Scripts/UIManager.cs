@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public PlayerCast playerRef;
+    public GameController playerRef;
 
     public Button[] buttonsArray = new Button[4];
 
@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        playerRef = GetComponent<PlayerCast>();
+        playerRef = GetComponent<GameController>();
 
         instance = this;
     }
@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
 
             if (item.isOnce)
             {
+                
                 buttonsArray[buttonCounter].gameObject.transform.position += new Vector3(spaceBetweenButtons, 0, 0);
                 spaceBetweenButtons += 80;
                 buttonsArray[buttonCounter].GetComponentInChildren<Image>().sprite = item.itemImage.sprite;
@@ -42,19 +43,6 @@ public class UIManager : MonoBehaviour
             }
             buttonCounter++;
         }
-
-        //if (paperClipRef.isPickedUp )
-        //{
-
-        //    buttons[1].gameObject.SetActive(true);
-        //    if (paperClipRef.isOnce)
-        //    {
-        //        buttons[1].gameObject.transform.position += new Vector3(activeButton, 0, 0);
-        //        activeButton += 80;
-
-        //        paperClipRef.isOnce = false;
-        //    }
-        //}
 
     }
 

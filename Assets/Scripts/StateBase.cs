@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface BaseState
 {
-     bool DoState(Item i);
+     bool DoState(string i);
 }
